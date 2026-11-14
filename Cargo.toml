@@ -1,0 +1,52 @@
+[workspace]
+resolver = "2"
+members = [
+    "backend/server",
+    "frontend/web",
+    "crates/shared",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+axum = "0.8.9"
+argon2 = "0.5"
+chrono = { version = "0.4", features = ["serde"] }
+dotenv = "0.15"
+jsonwebtoken = "9"
+leptos = { version = "0.8.23", features = ["csr"] }
+rand = "0.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+sqlx = { version = "0.8", default-features = false, features = [
+    "postgres",
+    "runtime-tokio-rustls",
+    "uuid",
+    "chrono",
+    "migrate",
+    "macros",
+] }
+thiserror = "2"
+tower-http = { version = "0.6", features = ["cors", "fs", "trace"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+tokio = { version = "1", features = ["full"] }
+gloo-net = { version = "0.6", features = ["http", "websocket"] }
+gloo-timers = { version = "0.3", features = ["futures"] }
+web-sys = { version = "0.3", features = [
+    "Blob",
+    "File",
+    "FileList",
+    "HtmlInputElement",
+    "KeyboardEvent",
+    "Storage",
+    "SubmitEvent",
+    "Window",
+] }
+wasm-bindgen = "0.2"
+futures-util = "0.3"

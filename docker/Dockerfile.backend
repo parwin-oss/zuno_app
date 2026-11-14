@@ -1,0 +1,22 @@
+FROM rust:1.88-bookworm AS builder
+
+WORKDIR /app
+COPY . .
+RUN cargo build --release --locked -p server
+
+FROM debian:bookworm-slim
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates curl \
+    && useradd --system --uid 10001 --no-create-home zuno \
+    && mkdir -p /var/lib/zuno/uploads \
+    && chown -R zuno:zuno /var/lib/zuno \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=builder /app/target/release/server /usr/local/bin/server
+USER 10001:10001
+ENV UPLOAD_DIR=/var/lib/zuno/uploads
+EXPOSE 3000
+HEALTHCHECK --interval=10s --timeout=5s --start-period=20s --retries=5 \
+    CMD curl -fsS http://127.0.0.1:3000/health/ready >/dev/null || exit 1
+ENTRYPOINT ["/usr/local/bin/server"]
