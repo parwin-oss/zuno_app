@@ -1,0 +1,16 @@
+[package]
+name = "web"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+leptos.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+shared = { path = "../../crates/shared" }
+gloo-net.workspace = true
+gloo-timers.workspace = true
+futures-util.workspace = true
+web-sys.workspace = true
+wasm-bindgen.workspace = true
