@@ -1,0 +1,11 @@
+/home/acer/zuno/target/debug/deps/leptos_hot_reload-6f0477dc2886a3d2.d: /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/lib.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/diff.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/node.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/parsing.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/patch.js
+
+/home/acer/zuno/target/debug/deps/libleptos_hot_reload-6f0477dc2886a3d2.rlib: /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/lib.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/diff.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/node.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/parsing.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/patch.js
+
+/home/acer/zuno/target/debug/deps/libleptos_hot_reload-6f0477dc2886a3d2.rmeta: /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/lib.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/diff.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/node.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/parsing.rs /home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/patch.js
+
+/home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/lib.rs:
+/home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/diff.rs:
+/home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/node.rs:
+/home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/parsing.rs:
+/home/acer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos_hot_reload-0.8.7/src/patch.js:
