@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd frontend/web && cargo install trunk --version 0.21.8 && trunk build --release",
+  "outputDirectory": "frontend/web/dist",
+  "framework": null,
+  "installCommand": ""
+}
