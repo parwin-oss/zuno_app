@@ -6,4 +6,4 @@ address = "127.0.0.1"
 port = 8080
 
 [tools]
-wasm_bindgen = "auto"
+wasm_bindgen = "0.2.130"
