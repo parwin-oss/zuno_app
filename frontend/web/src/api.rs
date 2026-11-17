@@ -1,22 +1,27 @@
 use gloo_net::http::Request;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
+use gloo_net::window;
 
 const API_BASE: &str = match option_env!("ZUNO_API_URL") {
     Some(url) => url,
-    None => "http://127.0.0.1:3000",
+    None => "", 
 };
 
 pub fn websocket_url(token: &str) -> String {
-    let websocket_base = API_BASE
-        .strip_prefix("https://")
-        .map(|host| format!("wss://{host}"))
-        .or_else(|| {
-            API_BASE
-                .strip_prefix("http://")
-                .map(|host| format!("ws://{host}"))
-        })
-        .unwrap_or_else(|| API_BASE.to_owned());
-    format!("{websocket_base}/ws?access_token={}", encode_query(token))
+    let is_secure = window().location().protocol().unwrap_or_default() == "https:";
+    let protocol = if is_secure { "wss://" } else { "ws://" };
+    
+    let host = if API_BASE.is_empty() {
+        window().location().host().unwrap_or_default()
+    } else {
+        API_BASE
+            .strip_prefix("https://")
+            .or_else(|| API_BASE.strip_prefix("http://"))
+            .unwrap_or(API_BASE)
+            .to_string()
+    };
+
+    format!("{protocol}{host}/ws?access_token={}", encode_query(token))
 }
 
 #[derive(Clone, Debug, Deserialize)]
