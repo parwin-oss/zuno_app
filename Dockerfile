@@ -2,10 +2,10 @@ FROM rust:1.89-bookworm AS frontend-builder
 WORKDIR /app
 RUN rustup target add wasm32-unknown-unknown
 RUN cargo install trunk --version 0.21.14 --locked
-RUN cargo install wasm-bindgen-cli --version 0.2.95
 COPY . .
 WORKDIR /app/frontend/web
 RUN trunk build --release
+
 FROM rust:1.89-bookworm AS backend-builder
 WORKDIR /app
 COPY . .
