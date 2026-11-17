@@ -15,9 +15,12 @@ RUN cargo build --release --locked -p server
 FROM debian:bookworm-slim AS runtime
 WORKDIR /app
 RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
+
 COPY --from=frontend-builder /app/frontend/web/dist ./frontend/web/dist
-COPY --from=backend-builder /app/backend/server/target/release/server /usr/local/bin/server
+COPY --from=backend-builder /app/target/release/server /usr/local/bin/server
+
 ENV APP_HOST=0.0.0.0
 ENV UPLOAD_DIR=/tmp/zuno-uploads
+
 EXPOSE 80
 ENTRYPOINT ["/usr/local/bin/server"]
