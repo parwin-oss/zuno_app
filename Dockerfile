@@ -1,3 +1,4 @@
+
 FROM rust:1.85-bookworm AS frontend-builder
 WORKDIR /app
 RUN rustup target add wasm32-unknown-unknown
