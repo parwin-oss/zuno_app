@@ -55,6 +55,9 @@ fn app(config: &AppConfig, state: AppState) -> Result<Router, String> {
             axum::http::header::CONTENT_TYPE,
         ]);
 
+    let frontend_dir = ServeDir::new("/app/frontend/web/dist")
+        .append_index_html_on_directories(true);
+
     Ok(Router::new()
         .route("/health/live", get(live))
         .route("/health/ready", get(ready))
@@ -98,6 +101,7 @@ fn app(config: &AppConfig, state: AppState) -> Result<Router, String> {
         .route("/api/messages/{id}/read", post(chat::mark_read))
         .layer(cors)
         .nest_service("/uploads", ServeDir::new(&config.upload_dir))
+        .fallback_service(frontend_dir)
         .with_state(state))
 }
 
